@@ -1,0 +1,7 @@
+# build/artifacts
+/dist/
+/node_modules/
+*.o
+*.out
+*.swp
+.DS_Store
