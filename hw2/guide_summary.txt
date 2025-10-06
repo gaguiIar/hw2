@@ -1,0 +1,42 @@
+#: Write simplified model of online retail isystem 
+
+Must read database of products that are categorized
+
+Support product sear  using keywords 
+
+Support adding to cart 
+  Support view item, purchase items in cart 
+
+Must save the updated databse of product and user information
+
+Where are classes or functions defined? 
+
+find > find in project 
+grep "search phrase" file(s)
+
+Struct User {
+  string username_
+  double credit-amount
+  integer type //prime(0) vs not prime(1)
+}
+Struct Product {
+  name_
+  price_
+  quantityInStock_
+}
+
+    Struct Book {
+      string isbn_
+      string author_
+    }
+    Struct Clothing {
+      string size_
+      string brand_
+
+    }
+
+    Struct Movie {
+      string genre_
+      string rating_
+    }
+

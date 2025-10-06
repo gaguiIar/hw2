@@ -5,6 +5,7 @@
 #include "util.h"
 
 using namespace std;
+
 std::string convToLower(std::string src)
 {
     std::transform(src.begin(), src.end(), src.begin(), ::tolower);
@@ -14,16 +15,34 @@ std::string convToLower(std::string src)
 /** Complete the code to convert a string containing a rawWord
     to a set of words based on the criteria given in the assignment **/
 std::set<std::string> parseStringToWords(string rawWords)
-{
-
-
-
-
-
-
-
-
-
+{ // "The Great Gatsby" "Oh, the Places You'll Go!"
+    // "The" "Great" "Gatsby" | "Oh" "The" "Places" "You" "ll" "Go"
+    std::set<std::string> dictionary;
+    string word;
+    for(char c: rawWords) {
+        //add valid characters to string 
+        if( (c >= '0' && c <= '9') ||
+            (c >= 'a' && c <= 'z') )
+        {
+            word += c;
+            //cout << "w:" << word << endl;
+        }
+        else if (c >= 'A' && c <= 'Z'){
+            c = c - 'A' + 'a';
+            word += c;
+            //cout << "w:" << word << endl;
+        }
+        else {
+            if(word.size() >= 2) {
+                dictionary.insert(word);
+            }
+            word.clear();
+        }
+        
+    }
+    if(word.size() >= 2) dictionary.insert(word);
+    
+    return dictionary;
 
 }
 

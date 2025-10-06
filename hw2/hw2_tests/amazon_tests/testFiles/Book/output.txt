@@ -1,0 +1,22 @@
+Keyword: [978-013292372-9]
+Keyword: [abstraction]
+Keyword: [and]
+Keyword: [carrano]
+Keyword: [data]
+Keyword: [henry]
+Keyword: [problem]
+Keyword: [solving]
+Keyword: [with]
+Read 1 products
+Read 0 users
+=====================================
+Menu: 
+  AND term term ...                  
+  OR term term ...                   
+  ADD username search_hit_number     
+  VIEWCART username                  
+  BUYCART username                   
+  QUIT new_db_filename               
+====================================
+
+Enter command: 
