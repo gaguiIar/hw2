@@ -9,6 +9,7 @@
 #include "db_parser.h"
 #include "product_parser.h"
 #include "util.h"
+#include "mydatastore.h"
 
 using namespace std;
 struct ProdNameSorter {
@@ -16,7 +17,18 @@ struct ProdNameSorter {
         return (p1->getName() < p2->getName());
     }
 };
+
 void displayProducts(vector<Product*>& hits);
+
+static void printCart(const std::vector<Product*>& cart)
+{
+    int cur = 1;
+    for(std::vector<Product*>::const_iterator it = cart.begin(); it != cart.end(); ++it){
+        std::cout << "Item  " << cur << std::endl;
+        std::cout << (*it)->displayString() << std::endl;
+        ++cur;
+    }
+}
 
 int main(int argc, char* argv[])
 {
@@ -29,7 +41,7 @@ int main(int argc, char* argv[])
      * Declare your derived DataStore object here replacing
      *  DataStore type to your derived type
      ****************/
-    DataStore ds;
+    MyDataStore ds;
 
 
 
@@ -74,12 +86,13 @@ int main(int argc, char* argv[])
                 string term;
                 vector<string> terms;
                 while(ss >> term) {
-                    term = convToLower(term);
-                    terms.push_back(term);
+                    terms.push_back(convToLower(term));
                 }
                 hits = ds.search(terms, 0);
                 displayProducts(hits);
+                
             }
+
             else if ( cmd == "OR" ) {
                 string term;
                 vector<string> terms;
@@ -100,15 +113,44 @@ int main(int argc, char* argv[])
                 done = true;
             }
 	    /* Add support for other commands here */
-
-
-
-
+        else if (cmd == "ADD") {
+            std::string username;
+            if(!(ds.valid_user(username))) {
+                std::cout << "Invalid request" << endl;
+            }
+            unsigned int hit = 0; 
+            if(!(ss>>username>>hit) ||
+                hit == 0 ||
+                hit > hits.size()) {
+                    std::cout << "Invalid request" << endl;
+            }
+            else {
+                ds.addToCart(username, hits[hit-1]);
+            }
+        } 
+        else if(cmd == "VIEWCART") {
+            std::string username;
+            if(!(ss>>username)) {
+                std::cout << "Invalid request" << endl;
+            }
+            else {
+                std::vector<Product*> cart;
+                cart = ds.viewCart(username);
+                printCart(cart);
+            }
+        }
+        else if(cmd == "BUYCART") {
+            std::string username;
+            if(!(ss >> username)) {
+                std::cout << "Invalid request" << std::endl;
+            } else {
+                ds.buyCart(username);
+            }
+        }
             else {
                 cout << "Unknown command" << endl;
             }
         }
-
     }
     return 0;
 }

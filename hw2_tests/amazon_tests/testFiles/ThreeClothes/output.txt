@@ -1,0 +1,26 @@
+Keyword: [crew]
+Keyword: [fitted]
+Keyword: [medium]
+Keyword: [men]
+Keyword: [shirt]
+Keyword: [blouse]
+Keyword: [jcpenny]
+Keyword: [small]
+Keyword: [women]
+Keyword: [fan]
+Keyword: [first]
+Keyword: [frc]
+Keyword: [shirt]
+Read 3 products
+Read 1 users
+=====================================
+Menu: 
+  AND term term ...                  
+  OR term term ...                   
+  ADD username search_hit_number     
+  VIEWCART username                  
+  BUYCART username                   
+  QUIT new_db_filename               
+====================================
+
+Enter command: 

@@ -1,0 +1,32 @@
+Keyword: [978-013292372-9]
+Keyword: [abstraction]
+Keyword: [and]
+Keyword: [carrano]
+Keyword: [data]
+Keyword: [henry]
+Keyword: [problem]
+Keyword: [solving]
+Keyword: [with]
+Keyword: [978-837023774-5]
+Keyword: [east]
+Keyword: [eden]
+Keyword: [john]
+Keyword: [of]
+Keyword: [steinbeck]
+Keyword: [00001010]
+Keyword: [00001111]
+Keyword: [111-000000000-1]
+Keyword: [robot]
+Read 3 products
+Read 1 users
+=====================================
+Menu: 
+  AND term term ...                  
+  OR term term ...                   
+  ADD username search_hit_number     
+  VIEWCART username                  
+  BUYCART username                   
+  QUIT new_db_filename               
+====================================
+
+Enter command: 
